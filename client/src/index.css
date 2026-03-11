@@ -5,3 +5,13 @@
 *{
     font-family: "Nunito Sans", sans-serif;
 }
+
+/* background design */
+body{
+  background-image: url("https://assets.prebuiltui.com/images/components/hero-section/hero-background-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: black;
+}
