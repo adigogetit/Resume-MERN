@@ -9,8 +9,9 @@ const hero = () => {
             <section className='bg-black bg-[url("https://assets.prebuiltui.com/images/components/hero-section/hero-net-image.png")] bg-no-repeat bg-bottom bg-size-[100%_auto] px-4 pt-5 md:pb-32'>
                 <nav className="flex items-center justify-between px-2.5 md:pl-6 py-2 max-w-6xl rounded-full mx-auto w-full border border-white/20">
 
+                    {/* logo */}
                     <svg width="120" height="40">
-                        <text x="8" y="28" fill="#ffffff" fontSize="26" fontWeight="600">
+                        <text className='cursor-pointer' x="8" y="28" fill="#ffffff" fontSize="26" fontWeight="600">
                             resume
                         </text>
                         <circle cx="108" cy="25" r="4" fill="#7C3AED" />
