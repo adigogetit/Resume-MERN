@@ -4,16 +4,16 @@ import Title from './Title'
 
 const Testimonial = () => {
     const testimonials = [
-        { id: 1, description: "PrebuiltUI helped us reduce build time drastically. The components feel production ready and consistent across the product.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Alex Turner", company: "Vercel" },
-        { id: 2, description: "We shipped our MVP weeks earlier than planned. PrebuiltUI removed a huge amount of repetitive UI work. ", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Harry Peter", company: "Amazon" },
-        { id: 3, description: "PrebuiltUI strikes the right balance between flexibility and consistency. It feels like a system built by real product teams.", image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60", name: "Jason Kim", company: "Flipkart" },
-        { id: 4, description: "The component structure and tokens system make scaling design incredibly easy. Highly recommended.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop", name: "Sofia Martinez", company: "Linear" },
-        { id: 5, description: "PrebuiltUI allows me to focus on building features instead of fighting CSS. Everything looks premium right out of the box.", image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60", name: "Alex Johnson", company: "Microsoft" },
-        { id: 6, description: "If you’re using Tailwind CSS, PrebuiltUI is a must have. It dramatically speeds up development while keeping the UI clean.", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", name: "Emily Karter", company: "Stripe" },
-        { id: 7, description: "PrebuiltUI strikes the right balance between flexibility and consistency. It feels like a system built by real product teams.", image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png", name: "Christofer Levin", company: "Deloitte" },
-        { id: 8, description: "PrebuiltUI helped us reduce build time drastically. The components feel production ready and consistent across the product.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Alex Turner", company: "Vercel" },
-        { id: 9, description: "We shipped our MVP weeks earlier than planned. PrebuiltUI removed a huge amount of repetitive UI work. ", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Harry Peter", company: "Amazon" }
-    ]
+        { id: 1, description: "This resume builder helped me create a professional resume in minutes. The AI suggestions made my experience sound much stronger.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Rahul Sharma", company: "TCS" },
+        { id: 2, description: "I struggled with formatting my resume before. With this tool, everything looks clean, modern, and ATS-friendly.", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Priya Verma", company: "Infosys" },
+        { id: 3, description: "The AI suggestions for skills and descriptions saved me hours of writing. I received interview calls within a week.", image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60", name: "Aman Gupta", company: "Flipkart" },
+        { id: 4, description: "Creating multiple resume versions for different jobs has never been easier. The templates are clean and professional.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop", name: "Sneha Iyer", company: "Wipro" },
+        { id: 5, description: "The resume templates are beautiful and easy to customize. I was able to export a polished resume instantly.", image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60", name: "Arjun Mehta", company: "Microsoft" },
+        { id: 6, description: "As a fresher, I didn’t know how to structure my resume. This builder guided me step-by-step and made the process simple.", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", name: "Neha Kapoor", company: "Amazon" },
+        { id: 7, description: "The AI resume suggestions improved my project descriptions and highlighted the right skills for recruiters.", image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png", name: "Rohit Patel", company: "Deloitte" },
+        { id: 8, description: "I love how fast and simple the interface is. Within 10 minutes I had a professional resume ready to send to recruiters.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Karan Singh", company: "Google" },
+        { id: 9, description: "The platform helped me highlight my skills clearly and build a resume that stands out in job applications.", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Ananya Reddy", company: "Adobe" }
+    ];
 
     const columns = [
         { start: 0, end: 3, className: "animate-scroll-up-1" },
