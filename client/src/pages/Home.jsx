@@ -1,3 +1,4 @@
+import CallToAction from "../components/home/CallToAction"
 import Features from "../components/home/Features"
 import Hero from "../components/home/hero"
 import Testimonial from "../components/home/Testimonial"
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <Features/>
       <Testimonial/>
+      <CallToAction/>
     
     </div>
   )
