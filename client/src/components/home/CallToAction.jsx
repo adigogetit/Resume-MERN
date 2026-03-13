@@ -3,7 +3,7 @@ import React from 'react'
 const CallToAction = () => {
     return (
         <>
-            <div id='contact' className="max-w-5xl py-16 md:w-full mx-2 md:mx-auto flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#281156] to-black rounded-2xl p-10 text-white mb-100 mt-40">
+            <div id='contact' className="max-w-5xl py-16 md:w-full mx-2 md:mx-auto flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#281156] to-black rounded-2xl p-10 text-white mb-10 mt-40">
                 <p className="px-6 py-2 rounded-full text-sm border border-[#54487B] bg-gradient-to-r from-[#A992F2] to-[#DFAB9B] bg-clip-text text-transparent">
                     Career Growth & Opportunities
                 </p>
