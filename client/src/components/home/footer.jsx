@@ -71,7 +71,7 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-        <p className="mt-3 text-center">© 2026 <a href="/">PrebuiltUI</a></p>
+        <p className="mt-3 text-center">© 2026 <a href="/">resume</a></p>
       </div>
     </footer>
   )

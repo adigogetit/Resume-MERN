@@ -4,7 +4,7 @@ import Title from './Title'
 
 const Testimonial = () => {
     const testimonials = [
-        { id: 1, description: "This resume builder helped me create a professional resume in minutes. The AI suggestions made my experience sound much stronger.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Rahul Sharma", company: "TCS" },
+        { id: 1, description: "This resume builder helped me create a professional resume in minutes. The AI suggestions made my experience sound much stronger.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Lucci cutta", company: "GLA" },
         { id: 2, description: "I struggled with formatting my resume before. With this tool, everything looks clean, modern, and ATS-friendly.", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Priya Verma", company: "Infosys" },
         { id: 3, description: "The AI suggestions for skills and descriptions saved me hours of writing. I received interview calls within a week.", image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60", name: "Aman Gupta", company: "Flipkart" },
         { id: 4, description: "Creating multiple resume versions for different jobs has never been easier. The templates are clean and professional.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop", name: "Sneha Iyer", company: "Wipro" },
