@@ -2,7 +2,10 @@ import { Lock, Mail, User2Icon } from 'lucide-react'
 import React from 'react'
 
 const Login = () => {
-  const [state, setState] = React.useState("login")
+
+  const query = new URLSearchParams(window.location.search)
+  const urlState = query.get('state')
+  const [state, setState] = React.useState(urlState || "Login")
 
   const [formData, setFormData] = React.useState({
     name: '',

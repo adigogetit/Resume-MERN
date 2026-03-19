@@ -25,7 +25,7 @@ const hero = () => {
                         <a className="hover:text-white/80" href="#contact">Contact</a>
 
                         {/* for mobile */}
-                        <Link to='/app?state=register' className="md:hidden flex bg-violet-600 text-slate-100 pr-8 pl-2 py-2 rounded-full text-base font-medium hover:bg-violet-700 transition items-center" >
+                        <Link to='/login?state=login' className="md:hidden flex bg-violet-600 text-slate-100 pr-8 pl-2 py-2 rounded-full text-base font-medium hover:bg-violet-700 transition items-center" >
                             <div className='size-9 rounded-full text-violet-600 bg-white mr-4 flex items-center justify-center'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16" /><path d="M2 12H22" /></svg>
                             </div>
@@ -42,7 +42,7 @@ const hero = () => {
                     </nav>
 
                     <div className="flex items-center">
-                        <Link to='/app?state=register' className="hidden md:flex bg-violet-600 text-slate-100 pr-8 pl-2 py-2 rounded-full text-balance font-medium hover:bg-violet-700 transition items-center">
+                        <Link to='/login?state=login' className="hidden md:flex bg-violet-600 text-slate-100 pr-8 pl-2 py-2 rounded-full text-balance font-medium hover:bg-violet-700 transition items-center">
                             <div className='size-9 rounded-full text-violet-600 bg-white mr-4 flex items-center justify-center'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16" /><path d="M2 12H22" /></svg>
                             </div>
