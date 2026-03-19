@@ -59,7 +59,7 @@ const hero = () => {
                 </nav>
 
                 <h1 className='text-4xl md:text-[58px]/19 text-center max-w-4xl mx-auto mt-40 text-white bg-clip-text leading-tight font-medium'>
-                    Land your dream job with <span className=" bg-linear-to-r from-purple-500 to-purple-400 bg-clip-text text-transparent text-nowrap">AI-powered </span> resumes.
+                    Land your dream job with <span className=" bg-linear-to-r from-violet-700 to-violet-600 bg-clip-text text-transparent text-nowrap">AI-powered </span> resumes.
                 </h1>
                 <p className="text-base mx-auto text-white/80 text-center mt-4">
                     Create, edit and download professional resumes with AI-powered assistance.
