@@ -20,10 +20,9 @@ const Login = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-grey-50">
+    <div className="flex items-center justify-center min-h-screen bg-black px-4">
 
-      <form onSubmit={handleSubmit}
-        className="w-full sm:w-87.5 text-center bg-white/6 border border-white/10 rounded-2xl px-8">
+      <form onSubmit={handleSubmit} className="w-full sm:w-87.5 text-center bg-white/6 border border-white/10 rounded-2xl  px-6 sm:px-8">
           
         <h1 className="text-white text-3xl mt-10 font-medium">
           {state === "login" ? "Login" : "Sign up"}
@@ -61,11 +60,12 @@ const Login = () => {
           {state === "login" ? "Login" : "Sign up"}
         </button>
 
-        <p onClick={() => setState(prev => prev === "login" ? "register" : "login")} className="text-gray-400 text-sm mt-3 mb-11 cursor-pointer" >
+        <p onClick={() => setState(prev => prev === "login" ? "Sign up" : "login")} className="text-gray-400 text-sm mt-3 mb-11 cursor-pointer" >
           {state === "login" ? "Don't have an account?" : "Already have an account?"}
           <span className="text-violet-400 hover:underline ml-1">click here</span>
         </p>
       </form>
+
     </div>
   )
 }
