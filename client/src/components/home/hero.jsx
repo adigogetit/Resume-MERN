@@ -15,7 +15,7 @@ const hero = () => {
                         <text className='cursor-pointer' x="8" y="28" fill="#ffffff" fontSize="26" fontWeight="600">
                             resume
                         </text>
-                        <circle cx="108" cy="25" r="4" fill="#7C3AED" />
+                        <circle cx="115" cy="25" r="4" fill="#7C3AED" />
                     </svg>
 
                     <nav id="menu" className={`max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-screen ${isMenuOpen ? 'max-md:w-full bg-black/10 backdrop-blur-md z-50' : 'max-md:w-0'} transition-[width] flex-col md:flex-row flex gap-12 text-white text-m font-normal`}>
