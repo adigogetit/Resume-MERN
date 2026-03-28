@@ -9,7 +9,7 @@ const CallToAction = () => {
                 </p>
                 <h1 className="text-4xl md:text-5xl md:leading-[60px] font-medium max-w-2xl mt-5">
                     Join 10,000+ AI Infulencers
-                    <span className="bg-gradient-to-r from-[#A992F2] to-[#DFAB9B] bg-clip-text text-transparent"> building smarter resumes with AI</span>
+                    <span className="bg-gradient-to-r from-[#942fb6] to-[#A992F2] bg-clip-text text-transparent"> building smarter resumes with AI</span>
                 </h1>
                 <p className="text-white text-sm mt-2">Create ATS-friendly resumes, get AI suggestions, and land your dream job faster.</p>
                 <button className="px-12 py-3.5 mt-6 rounded-full text-m border border-[#54487B] active:scale-95 transition-all bg-gradient-to-r from-[#A992F2] to-[#DFAB9B] bg-clip-text text-transparent">
