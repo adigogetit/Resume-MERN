@@ -31,7 +31,7 @@ const Features = () => {
 
                 <div class="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-10 mb-20 px-6">
                     {featuresData.map((feature, index) => (
-                        <div key={index} className={`hover:-translate-y-0.5 transition duration-300 ${index === 1 ? 'p-px rounded-[13px] bg-gradient-to-br from-[#9544FF] to-[#223B60]' : ''}`}>
+                        <div key={index} className={`hover:-translate-y-0.5 transition duration-300 ${index === 1 ? 'p-px rounded-[13px] bg-linear-to-br from-[#9544FF] to-[#223B60]' : ''}`}>
                             <div className="p-6 rounded-xl space-y-4 border border-slate-800 bg-slate-950 max-w-80 w-full">
                                 {feature.icon}
                                 <h3 className="text-base font-medium text-white">
