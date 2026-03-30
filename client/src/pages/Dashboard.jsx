@@ -1,9 +1,20 @@
 import { FilePenLineIcon, LoaderCircleIcon, PencilIcon, PlusIcon, TrashIcon, UploadCloud, UploadCloudIcon, XIcon } from 'lucide-react'
-
+import { useEffect, useState } from 'react'
+import { dummyResumeData } from '../assets/assets'
 
 const Dasboard = () => {
 
   const user = { name: 'Aditya Singh' }
+
+  const [allResumes, setAllResumes] = useState([])
+
+  const loadAllResumes = async () => {
+    setAllResumes(dummyResumeData)
+  }
+
+  useEffect(() => {
+    loadAllResumes()
+  }, [])
 
   return (
     <div className="text-white max-w-7xl mx-auto px-4 py-8">
@@ -24,7 +35,9 @@ const Dasboard = () => {
         </button>
       </div>
 
-      <hr className='border-slate-100 my-6 sm:w-[305px]' />
+      <hr className='border-slate-100 my-6 sm:w-76.25' />
+
+      
 
 
     </div>
