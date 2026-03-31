@@ -1,6 +1,7 @@
 import { FilePenLineIcon, LoaderCircleIcon, PencilIcon, PlusIcon, TrashIcon, UploadCloud, UploadCloudIcon, XIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { dummyResumeData } from '../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 const Dasboard = () => {
 
@@ -16,11 +17,19 @@ const Dasboard = () => {
   const [resume, setResume] = useState(null)
   const [editResumeId, setEditResumeId] = useState('')
 
-  const loadAllResumes = async()=>{
+  const usenavigate = useNavigate()
+
+  const loadAllResumes = async () => {
     setAllResumes(dummyResumeData)
   }
 
-  const createResume = async(event)=>{
+  const createResume = async (event) => {
+    event.preventDefault();
+    setShowCreateResume(false);
+    navigate(`/app/builder/res123`)
+  }
+
+  const uploadResume = async (event) => {
     event.preventDefault();
     setShowCreateResume(false);
   }
@@ -89,8 +98,10 @@ const Dasboard = () => {
             <XIcon className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setShowCreateResume(false); setTitle('') }} />
           </div>
         </form>
-      )
-      }
+      )}
+
+
+
 
     </div>
   )
