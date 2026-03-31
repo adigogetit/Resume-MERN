@@ -16,8 +16,9 @@ const Dasboard = () => {
   const [title, setTitle] = useState('')
   const [resume, setResume] = useState(null)
   const [editResumeId, setEditResumeId] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  const usenavigate = useNavigate()
+  const navigate = useNavigate()
 
   const loadAllResumes = async () => {
     setAllResumes(dummyResumeData)
@@ -28,10 +29,11 @@ const Dasboard = () => {
     setShowCreateResume(false);
     navigate(`/app/builder/res123`)
   }
-
+  
   const uploadResume = async (event) => {
     event.preventDefault();
-    setShowCreateResume(false);
+    setShowUploadResume(false);
+    navigate(`/app/builder/res123`)
   }
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const Dasboard = () => {
 
           return (
             // added diff colors in button
-            <button key={index} className='relative w-full sm:max-w-36 h-48 flex flex-col items-center justify-center rounded-lg gap-2 border group hover:shadow-lg transition-all duration-300 cursor-pointer'
+            <button key={index} onClick={()=> navigate('/app/builder/${resume._id}')} className='relative w-full sm:max-w-36 h-48 flex flex-col items-center justify-center rounded-lg gap-2 border group hover:shadow-lg transition-all duration-300 cursor-pointer'
               style={{ background: `linear-gradient(135deg, ${baseColor}10, ${baseColor}40)`, borderColor: baseColor + '40' }}>
 
               {/* title and updated on */}
@@ -102,18 +104,16 @@ const Dasboard = () => {
 
       {showUploadResume && (
         <form onSubmit={uploadResume} onClick={() => setShowUploadResume(false)} className='fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center'>
-          <div onClick={e => e.stopPropagation()} className='relative bg-slate-50 border shadow-md rounded-lg w-full max-w-sm p-6'>
+          <div onClick={e => e.stopPropagation()} className='relative bg-gray-950 border shadow-md rounded-lg w-full max-w-sm p-6'>
 
-            <h2 className='text-xl font-bold mb-4'>Upload Resume</h2>
-            <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-green-600 ring-green-600' required />
+            <h2 className='text-xl font-sm mb-4'>Upload Resume</h2>
+            <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-violet-600 ring-violet-600' required />
 
             <div>
               <label htmlFor="resume-input" className="block text-sm text-slate-700">
                 Select resume file
-                <div className='flex flex-col items-center justify-center gap-2 border group text-slate-400 border-slate-400 border-dashed rounded-md p-4 py-10 my-4 hover:border-green-500 hover:text-green-700 cursor-pointer transition-colors'>
-                  {resume ? (
-                    <p className='text-green-700'>{resume.name}</p>
-                  ) : (
+                <div className='flex flex-col items-center justify-center gap-2 border group text-slate-400 border-slate-400 border-dashed rounded-md p-4 py-10 my-4 hover:border-violet-500 hover:text-violet-700 cursor-pointer transition-colors'>
+                  {resume ? (<p className='text-violet-700'>{resume.name}</p>) : (
                     <>
                       <UploadCloud className='size-14 stroke-1' />
                       <p>Upload resume</p>
@@ -121,11 +121,10 @@ const Dasboard = () => {
                   )}
                 </div>
               </label>
-
               <input type="file" id='resume-input' accept='.pdf' hidden onChange={(e) => setResume(e.target.files[0])} />
             </div>
 
-            <button disabled={isLoading} className='w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors flex items-center justify-center gap-2'>
+            <button disabled={isLoading} className='w-full py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition-colors flex items-center justify-center gap-2'>
               {isLoading && <LoaderCircleIcon className='animate-spin size-4 text-white' />}
               {isLoading ? 'Uploading...' : 'Upload Resume'}
             </button>
