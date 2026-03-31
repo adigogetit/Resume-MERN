@@ -52,13 +52,13 @@ const Dasboard = () => {
   }, [])
 
   return (
-    <div className="text-white max-w-7xl mx-auto px-4 py-8">
+    <div className="text-white max-w-7xl mx-auto px-4 py-7">
 
       {/* less than 640px  */}
       <p className="text-2xl font-medium mb-6 bg-clip-text sm:hidden">Hi, {user?.name}</p>
 
       {/* create and upload button */}
-      <div className='flex gap-5 '>
+      <div className='flex gap-6 '>
         <button onClick={() => setShowCreateResume(true)} className='w-full bg-gray-950 sm:max-w-36 h-48 flex flex-col items-center justify-center rounded-lg gap-2 text-slate-100 border border-dashed border-slate-700 group hover:border-indigo-500 hover:shadow-lg transition-all duration-300 cursor-pointer'>
           <PlusIcon className='size-11 transition-all duration-300 p-2.5 bg-linear-to-br from-indigo-300 to-indigo-500 text-white rounded-full' />
           <p className='text-sm group-hover:text-indigo-400 transition-all duration-300'>Create Resume</p>
@@ -73,7 +73,7 @@ const Dasboard = () => {
       <hr className='border-slate-100 my-6 sm:w-76.25' />
 
       {/* display all resume in grid layout */}
-      <div className="grid grid-cols-2 sm:flex flex-wrap gap-4 ">
+      <div className="grid grid-cols-2 sm:flex flex-wrap gap-7 ">
         {allResumes.map((resume, index) => {
           const baseColor = colors[index % colors.length]; // color changes
 
@@ -155,9 +155,7 @@ const Dasboard = () => {
             <XIcon className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setEditResumeId(''); setTitle('') }} />
           </div>
         </form>
-      )
-      }
-
+      )}
 
     </div>
   )
