@@ -92,7 +92,7 @@ const Dasboard = () => {
           <div onClick={e => e.stopPropagation()} className='relative bg-gray-950 border shadow-md rounded-lg w-full max-w-sm p-6'>
 
             <h2 className=' text-xl font-sm mb-4'>Create a Resume</h2>
-            <input type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-violet-600 ring-violet-600' required />
+            <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-violet-600 ring-violet-600' required />
 
             <button className='w-full py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition-colors'>Create Resume</button>
             <XIcon className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setShowCreateResume(false); setTitle('') }} />
@@ -100,7 +100,22 @@ const Dasboard = () => {
         </form>
       )}
 
+      {showUploadResume && (
+        <form onSubmit={uploadResume} onClick={() => setShowUploadResume(false)} className='fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center'>
+          <div onClick={e => e.stopPropagation()} className='relative bg-slate-50 border shadow-md rounded-lg w-full max-w-sm p-6'>
 
+            <h2 className='text-xl font-bold mb-4'>Upload Resume</h2>
+            <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-green-600 ring-green-600' required />
+
+
+            <button disabled={isLoading} className='w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors flex items-center justify-center gap-2'>
+              {isLoading && <LoaderCircleIcon className='animate-spin size-4 text-white' />}
+              {isLoading ? 'Uploading...' : 'Upload Resume'}
+            </button>
+            <XIcon className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setShowUploadResume(false); setTitle('') }} />
+          </div>
+        </form>
+      )}
 
 
     </div>
