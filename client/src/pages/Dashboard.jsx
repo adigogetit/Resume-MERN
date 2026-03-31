@@ -40,6 +40,13 @@ const Dasboard = () => {
     event.preventDefault();
   }
 
+  const deleteResume = async (resumeId) => {
+    const confirm = window.confirm('Are you sure you want to delete this resume?')
+    if(confirm){
+      setAllResumes(allResumes.filter(resume => resume._id !== resumeId)) 
+    }
+  }
+
   useEffect(() => {
     loadAllResumes()
   }, [])
