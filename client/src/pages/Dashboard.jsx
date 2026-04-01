@@ -55,7 +55,7 @@ const Dasboard = () => {
     <div className="text-white max-w-7xl mx-auto px-4 py-7">
 
       {/* less than 640px  */}
-      <p className="text-2xl font-medium mb-6 bg-clip-text sm:hidden">Hi, {user?.name}</p>
+      <p className="text-2xl font-medium mb-6 bg-clip-text sm:hidden">Hello, {user?.name}</p>
 
       {/* create and upload button */}
       <div className='flex gap-6 '>
