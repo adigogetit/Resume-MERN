@@ -11,11 +11,11 @@ const Navbar = () => {
     }
 
     return (
-        <div className='bg-black border-b border-gray-800 shadow'>
-            <nav className='flex items-center justify-between max-w-7xl mx-auto px-4 py-3.5 text-slate-200 transition-all'>
+        <div className='bg-gray-100 border-b border-gray-300 shadow'>
+            <nav className='flex items-center justify-between max-w-7xl mx-auto px-4 py-3.5 text-gray-800 transition-all'>
 
                 <svg width="120" height="40">
-                    <text className='cursor-pointer' x="8" y="28" fill="#ffffff" fontSize="26" fontWeight="600">
+                    <text className='cursor-pointer' x="8" y="28" fill="#111827" fontSize="26" fontWeight="600">
                         resume
                     </text>
                     <circle cx="115" cy="25" r="4" fill="#7C3AED" />
