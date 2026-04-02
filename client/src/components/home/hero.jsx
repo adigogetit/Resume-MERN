@@ -26,7 +26,7 @@ const hero = () => {
                         <a className="hover:text-gray-600" href="#contact">Contact</a>
 
                         {/* mobile button */}
-                        <Link to='/login?state=login' className="md:hidden flex bg-violet-600 text-white pr-8 pl-2 py-2 rounded-full text-base font-medium hover:bg-violet-700 transition items-center">
+                        <Link to='/login?state=login' className="md:hidden flex bg-violet-600 text-white pr-8 pl-2 py-2 rounded-full text-base font-medium hover:bg-violet-500 transition items-center">
                             <div className='size-9 rounded-full text-violet-600 bg-white mr-4 flex items-center justify-center'>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="lucide lucide-move-right size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M18 8L22 12L18 16" />
@@ -44,7 +44,7 @@ const hero = () => {
                     </nav>
 
                     <div className="flex items-center">
-                        <Link to='/login?state=login' className="hidden md:flex bg-violet-600 text-white pr-8 pl-2 py-2 rounded-full font-medium hover:bg-violet-700 transition items-center">
+                        <Link to='/login?state=login' className="hidden md:flex bg-violet-600 text-white pr-8 pl-2 py-2 rounded-full font-medium hover:bg-violet-500 transition items-center">
                             <div className='size-9 rounded-full text-violet-600 bg-white mr-4 flex items-center justify-center'>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="lucide lucide-move-right size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M18 8L22 12L18 16" />
@@ -64,7 +64,7 @@ const hero = () => {
 
                 <h1 className='text-4xl md:text-[58px]/19 text-center max-w-4xl mx-auto mt-40 text-gray-900 leading-tight font-medium'>
                     Land your dream job with 
-                    <span className="bg-linear-to-r from-violet-700 to-violet-600 bg-clip-text text-transparent text-nowrap">
+                    <span className="bg-linear-to-r from-violet-700 to-violet-500 bg-clip-text text-transparent text-nowrap">
                         {" "}AI-powered
                     </span> resumes.
                 </h1>
@@ -74,7 +74,7 @@ const hero = () => {
                 </p>
 
                 <div className='flex gap-3 mt-10 mb-10 justify-center'>
-                    <Link to='/app' className="bg-violet-600 hover:bg-violet-700 text-white text-xm md:text-lg px-8 py-3 rounded-full transition cursor-pointer">
+                    <Link to='/app' className="bg-violet-600 hover:bg-violet-500 text-white text-xm md:text-lg px-8 py-3 rounded-full transition cursor-pointer">
                         Get started
                     </Link>
                 </div>

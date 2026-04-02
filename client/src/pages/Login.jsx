@@ -88,7 +88,7 @@ const Login = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="mt-2 w-full h-11 rounded-full text-white bg-violet-700 hover:bg-violet-600 transition active:scale-95"
+          className="mt-2 w-full h-11 rounded-full text-white bg-violet-600 hover:bg-violet-500 transition active:scale-95"
         >
           {state === "login" ? "Login" : "Sign up"}
         </button>

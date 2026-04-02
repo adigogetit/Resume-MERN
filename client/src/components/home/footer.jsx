@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[14px] text-gray-600 bg-gray-100  border-t border-gray-300">
 
-      <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
+      <div className="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
 
         <svg width="120" height="40">
           <text className='cursor-pointer' x="8" y="28" fill="#111827" fontSize="26" fontWeight="600">
