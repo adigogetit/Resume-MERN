@@ -88,8 +88,8 @@ const Dasboard = () => {
               </p>
 
               <div onClick={e => e.stopPropagation()} className='absolute top-1 right-1 group-hover:flex items-center hidden'>
-                <TrashIcon onClick={() => deleteResume(resume._id)} className="size-7 p-1.5 hover:bg-gray-200 rounded text-gray-500 transition-colors" />
-                <PencilIcon onClick={() => { setEditResumeId(resume._id); setTitle(resume.title) }} className="size-7 p-1.5 hover:bg-gray-200 rounded text-gray-500 transition-colors" />
+                <TrashIcon onClick={() => deleteResume(resume._id)} className="size-7 p-1.5 hover:bg-gray-300 rounded text-gray-500 transition-colors" />
+                <PencilIcon onClick={() => { setEditResumeId(resume._id); setTitle(resume.title) }} className="size-7 p-1.5 hover:bg-gray-300 rounded text-gray-500 transition-colors" />
               </div>
 
             </button>
@@ -143,6 +143,20 @@ const Dasboard = () => {
           </div>
         </form>
       )}
+
+      {editResumeId && (
+        <form onClick={() => setEditResumeId('')} className='fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center'>
+          <div onClick={e => e.stopPropagation()} className='relative bg-slate-50 border shadow-md rounded-lg w-full max-w-sm p-6'>
+
+            <h2 className='text-xl font-bold mb-4'>Edit Resume Title</h2>
+            <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder='Enter resume title' className='w-full px-4 py-2 mb-4 focus:border-violet-600 ring-violet-600' required />
+
+            <button className='w-full py-2 bg-violet-600 text-white rounded hover:bg-violet-700 transition-colors'>Update</button>
+            <XIcon className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setEditResumeId(''); setTitle('') }} />
+          </div>
+        </form>
+      )
+      }
 
     </div>
   )
