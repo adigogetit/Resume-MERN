@@ -23,29 +23,34 @@ const Features = () => {
     return (
         <>
             <div id='features' className='flex flex-col items-center my-10 scroll-mt-12 mt-30'>
-                <div className="flex items-center gap-2 text-m text-violet-600 bg-violet-400/10 rounded-full mb-3 px-7 py-3.5">
+
+                <div className="flex items-center gap-2 text-m text-violet-600 bg-violet-100 rounded-full mb-3 px-7 py-3.5">
                     <Zap width={18} />
                     <span>Simple Process</span>
                 </div>
+
                 <Title title='Build your resume' description='Our streamlined process helps you create a professional resume in minutes with intelligent AI-powered tools and features.' />
 
-                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-10 mb-20 px-6">
+                <div className="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-10 mb-20 px-6">
                     {featuresData.map((feature, index) => (
                         <div key={index} className={`hover:-translate-y-0.5 transition duration-300 ${index === 1 ? 'p-px rounded-[13px] bg-linear-to-br from-[#9544FF] to-[#223B60]' : ''}`}>
-                            <div className="p-6 rounded-xl space-y-4 border border-slate-800 bg-slate-950 max-w-80 w-full">
+
+                            <div className="p-6 rounded-xl space-y-4 border border-gray-300 bg-white max-w-80 w-full shadow-sm">
                                 {feature.icon}
-                                <h3 className="text-base font-medium text-white">
+
+                                <h3 className="text-base font-medium text-gray-900">
                                     {feature.title}
                                 </h3>
-                                <p className="text-slate-400 line-clamp-2 pb-4">
+
+                                <p className="text-gray-600 line-clamp-2 pb-4">
                                     {feature.description}
                                 </p>
+
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-
         </>
     )
 }
