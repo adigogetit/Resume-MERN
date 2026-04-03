@@ -34,6 +34,21 @@ const ResumeBuilder = () => {
     }
   }
 
+  const [activeSectionIndex, setActiveSectionIndex] = useState(0)
+  const [removeBackground, setRemoveBackground] = useState(false);
+
+  const sections = [
+    { id: "personal", name: "Personal Info", icon: User },
+    { id: "summary", name: "Summary", icon: FileText },
+    { id: "experience", name: "Experience", icon: Briefcase },
+    { id: "education", name: "Education", icon: GraduationCap },
+    { id: "projects", name: "Projects", icon: FolderIcon },
+    { id: "skills", name: "Skills", icon: Sparkles },
+  ]
+  const activeSection = sections[activeSectionIndex]
+
+
+
   useEffect(() => {
     loadExistingResume()
   }, [])
@@ -56,8 +71,8 @@ const ResumeBuilder = () => {
             <div className='bg-white rounded-lg shadow-sm border border-gray-200 p-6 pt-1'>
 
               {/* progress bar using activeSectionIndex */}
-              <hr className="absolute top-0 left-0 right-0 border-2 border-gray-200"/>
-              <hr className="absolute top-0 left-0  h-1 bg-linear-to-r from-green-500 to-green-600 border-none transition-all duration-2000" style={{width: `${activeSectionIndex * 100 / (sections.length - 1)}%`}}/>
+              <hr className="absolute top-0 left-0 right-0 border-2 border-gray-200" />
+              <hr className="absolute top-0 left-0  h-1 bg-linear-to-r from-violet-500 to-violet-600 border-none transition-all duration-2000" style={{ width: `${activeSectionIndex * 100 / (sections.length - 1)}%` }} />
 
             </div>
           </div>
