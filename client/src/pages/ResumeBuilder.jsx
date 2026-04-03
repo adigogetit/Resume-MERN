@@ -1,3 +1,8 @@
+import { dummyResumeData } from '../assets/assets'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, DownloadIcon, EyeIcon, EyeOffIcon, FileText, FolderIcon, GraduationCap, Share2Icon, Sparkles, User } from 'lucide-react'
+
 
 const ResumeBuilder = () => {
 
@@ -15,28 +20,32 @@ const ResumeBuilder = () => {
     template: "classic",
     accent_color: "#3B82F6",
     public: false,
-  }) 
+  })
 
   const loadExistingResume = async () => {
-   try {
-    const resume = dummyResumneData.find(resume => resume._id === resumeId)
-    if(resume){
-      setResumeData(resume)
-      document.title = resume.title;
+    try {
+      const resume = dummyResumeData.find(resume => resume._id === resumeId)
+      if (resume) {
+        setResumeData(resume)
+        document.title = resume.title;
+      }
+    } catch (error) {
+      console.log(error.message)
     }
-   } catch (error) {
-    console.log(error.message)
-   }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     loadExistingResume()
-  },[])
+  }, [])
 
 
   return (
     <div>
-      
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <Link to={'/app'} className='inline-flex gap-2 items-center text-slate-600 hover:text-slate-800 transition-all'>
+          <ArrowLeftIcon className="size-4" /> Back to Dashboard
+        </Link>
+      </div>
     </div>
   )
 }
