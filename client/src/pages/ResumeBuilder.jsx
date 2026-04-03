@@ -78,7 +78,8 @@ const ResumeBuilder = () => {
               {/* Section Navigation */}
               <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
 
-
+                {/* right side */}
+                <div></div>
 
                 {/* left side */}
                 <div className='flex items-center'>
@@ -95,6 +96,17 @@ const ResumeBuilder = () => {
                 </div>
 
               </div>
+
+              {/* Form Content */}
+              <div className='space-y-6'>
+                  {activeSection.id === 'personal' && (
+                    <div></div>
+                  )}
+              </div>
+
+              <button onClick={()=> {toast.promise(saveResume, {loading: 'Saving...'})}} className='bg-linear-to-br from-green-100 to-green-200 ring-green-300 text-green-600 ring hover:ring-green-400 transition-all rounded-md px-6 py-2 mt-6 text-sm'>
+                Save Changes
+              </button>
 
             </div>
           </div>
