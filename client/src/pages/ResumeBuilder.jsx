@@ -6,6 +6,7 @@ import PersonalInfoForm from '../components/other/PersonalInfoForm'
 import ResumePreview from '../components/other/ResumePreview'
 import ColorPicker from '../components/templates/ColorPicker'
 import TemplateSelector from '../components/templates/TemplateSelector'
+import ProfessionalSummaryForm from '../components/templates/ProfessionalSummaryForm'
 
 
 const ResumeBuilder = () => {
@@ -106,12 +107,20 @@ const ResumeBuilder = () => {
 
               {/* Form Content */}
               <div className='space-y-6'>
+
                   {activeSection.id === 'personal' && (
                    <PersonalInfoForm 
                    data={resumeData.personal_info} 
                    onChange={(data)=>setResumeData(prev => ({...prev, personal_info: data }))} 
                    removeBackground={removeBackground} 
                    setRemoveBackground={setRemoveBackground} /> 
+                  )}
+
+                  {activeSection.id === 'summary' && (
+                    <ProfessionalSummaryForm
+                    data={resumeData.professional_summary} 
+                    onChange={(data)=> setResumeData(prev=> ({...prev, professional_summary: data}))} 
+                    setResumeData={setResumeData}/>
                   )}
               </div>
 
@@ -127,8 +136,6 @@ const ResumeBuilder = () => {
               <div className='relative w-full'>
 
                 <div className='absolute bottom-3 left-0 right-0 flex items-center justify-end gap-2'>
-
-
                 </div>
 
               </div>
