@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, DownloadIcon, EyeIcon, EyeOffIcon, FileText, FolderIcon, GraduationCap, Share2Icon, Sparkles, User } from 'lucide-react'
 import PersonalInfoForm from '../components/other/PersonalInfoForm'
 import ResumePreview from '../components/other/ResumePreview'
+import ColorPicker from '../components/templates/ColorPicker'
 import TemplateSelector from '../components/templates/TemplateSelector'
 
 
@@ -84,6 +85,7 @@ const ResumeBuilder = () => {
                 {/* right side button */}
                 <div className='flex items-center gap-2'>
                   <TemplateSelector selectedTemplate={resumeData.template} onChange={(template)=> setResumeData(prev => ({...prev, template}))}/>
+                  <ColorPicker selectedColor={resumeData.accent_color} onChange={(color)=>setResumeData(prev => ({...prev, accent_color: color}))}/>
                 </div>
 
                 {/* left side button */}
