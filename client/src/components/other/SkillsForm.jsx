@@ -2,10 +2,11 @@ import { Plus, Sparkles, X } from 'lucide-react'
 import { useState } from 'react'
 
 const SkillsForm = ({ data, onChange }) => {
-    
+
     const [newSkill, setNewSkill] = useState("")
 
     const addSkill = () => {
+        // it trim the extra spaces and dont aloow duplicate 
         if (newSkill.trim() && !data.includes(newSkill.trim())) {
             onChange([...data, newSkill.trim()])
             setNewSkill("")
@@ -16,6 +17,7 @@ const SkillsForm = ({ data, onChange }) => {
         onChange(data.filter((_, index) => index !== indexToRemove))
     }
 
+    // at enter it should auto matically added
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
@@ -39,7 +41,7 @@ const SkillsForm = ({ data, onChange }) => {
                     value={newSkill}
                     onKeyDown={handleKeyPress}
                 />
-                <button onClick={addSkill} disabled={!newSkill.trim} className='flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed'>
+                <button onClick={addSkill} disabled={!newSkill.trim} className='flex items-center gap-2 px-4 py-2 text-sm bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed'>
                     <Plus className="size-4" /> Add
                 </button>
             </div>
@@ -48,11 +50,12 @@ const SkillsForm = ({ data, onChange }) => {
                 <div className='flex flex-wrap gap-2'>
                     {/* map all skills  */}
                     {data.map((skill, index) => (
+                        // index and delete icon
                         <span
                             key={index}
-                            className='flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'>
+                            className='flex items-center gap-1 px-3 py-1 cursor-pointer bg-blue-100 text-violet-800 rounded-full text-sm'>
                             {skill}
-                            <button onClick={() => removeSkill(index)} className="ml-1 hover:bg-blue-200 rounded-full p-0.5 transition-colors">
+                            <button onClick={() => removeSkill(index)} className="cursor-pointer ml-1 hover:bg-violet-200 rounded-full p-0.5 transition-colors">
                                 <X className="w-3 h-3" />
                             </button>
                         </span>
@@ -70,7 +73,7 @@ const SkillsForm = ({ data, onChange }) => {
 
             {/* if skills is there the show this too at end */}
             <div className='bg-blue-50 p-3 rounded-lg'>
-                <p className='text-sm text-blue-800'><strong>Tip:</strong> Add 8-12 relevant skills. Include both technical skills (programming languages, tools) and soft skills (leadership, communication).</p>
+                <p className='text-sm text-violet-800'><strong>Tip:</strong> Add 8-12 relevant skills. Include both technical skills (programming languages, tools) and soft skills (leadership, communication).</p>
             </div>
         </div>
     )
