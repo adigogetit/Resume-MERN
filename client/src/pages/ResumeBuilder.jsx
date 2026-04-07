@@ -4,10 +4,11 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, DownloadIcon, EyeIcon, EyeOffIcon, FileText, FolderIcon, GraduationCap, Share2Icon, Sparkles, User } from 'lucide-react'
 import PersonalInfoForm from '../components/other/PersonalInfoForm'
 import ResumePreview from '../components/other/ResumePreview'
-import ColorPicker from '../components/templates/ColorPicker'
-import TemplateSelector from '../components/templates/TemplateSelector'
-import ProfessionalSummaryForm from '../components/templates/ProfessionalSummaryForm'
-import ExperienceForm from '../components/templates/ExperienceForm'
+import ColorPicker from '../components/other/ColorPicker'
+import TemplateSelector from '../components/other/TemplateSelector'
+import ProfessionalSummaryForm from '../components/other/ProfessionalSummaryForm'
+import ExperienceForm from '../components/other/ExperienceForm'
+import EducationForm from '../components/other/EducationForm'
 
 
 const ResumeBuilder = () => {
@@ -128,6 +129,12 @@ const ResumeBuilder = () => {
                     <ExperienceForm
                     data={resumeData.experience} 
                     onChange={(data)=> setResumeData(prev=> ({...prev, experience: data}))}/>
+                  )}
+
+                  {activeSection.id == 'education' && (
+                    <EducationForm
+                    data={resumeData.education}
+                    onChange={(data)=> setResumeData(prev=> ({...prev, education: data}))}/>
                   )}
               </div>
 
