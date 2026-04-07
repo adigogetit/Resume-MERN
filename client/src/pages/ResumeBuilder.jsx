@@ -9,6 +9,7 @@ import TemplateSelector from '../components/other/TemplateSelector'
 import ProfessionalSummaryForm from '../components/other/ProfessionalSummaryForm'
 import ExperienceForm from '../components/other/ExperienceForm'
 import EducationForm from '../components/other/EducationForm'
+import ProjectForm from '../components/other/ProjectForm'
 
 
 const ResumeBuilder = () => {
@@ -136,6 +137,13 @@ const ResumeBuilder = () => {
                     data={resumeData.education}
                     onChange={(data)=> setResumeData(prev=> ({...prev, education: data}))}/>
                   )}
+
+                  {activeSection.id === 'projects' && (
+                    <ProjectForm
+                    data={resumeData.project} 
+                    onChange={(data)=> setResumeData(prev=> ({...prev, project: data}))}/>
+                  )}
+
               </div>
 
               <button onClick={()=> {toast.promise(saveResume, {loading: 'Saving...'})}} className='bg-linear-to-br from-violet-100 to-violet-200 hover:from-violet-200 hover:to-violet-400 text-violet-600  ring-violet-500 ring hover:ring-violet-900 transition-all rounded-md px-6 py-2 mt-6 text-sm'>
