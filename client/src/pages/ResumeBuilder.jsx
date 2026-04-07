@@ -82,7 +82,7 @@ const ResumeBuilder = () => {
 
               
               {/* Section Navigation */}
-              <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
+              <div className="flex justify-between items-center mb-4 border-b border-gray-300 py-2">
 
                 {/* right side button */}
                 <div className='flex items-center gap-2'>
