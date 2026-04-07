@@ -55,7 +55,24 @@ const ResumeBuilder = () => {
   ]
   const activeSection = sections[activeSectionIndex]
 
+  const changeResumeVisibility = async () => {
+    setResumeData({ ...resumeData, public: !resumeData.public })
+  }
 
+  const handleShare = () => {
+    const frontendUrl = window.location.href.split('/app/')[0];
+    const resumeUrl = frontendUrl + '/view/' + resumeId;
+
+    if (navigator.share) {
+      navigator.share({ url: resumeUrl, text: "My Resume", })
+    } else {
+      alert('Share not supported on this browser.')
+    }
+  }
+
+  const downloadResume = () => {
+    window.print();
+  }
 
   useEffect(() => {
     loadExistingResume()
@@ -168,30 +185,30 @@ const ResumeBuilder = () => {
 
                 {/* share */}
                 {resumeData.public && (
-                  <button 
-                  onClick={handleShare} 
-                  className='flex items-center p-2 px-4 gap-2 text-xs bg-linear-to-br from-blue-100 to-blue-200 text-blue-600 rounded-lg ring-blue-300 hover:ring transition-colors'>
+                  <button
+                    onClick={handleShare}
+                    className='flex items-center p-2 px-4 gap-2 text-xs bg-linear-to-br from-blue-100 to-blue-200 text-blue-600 rounded-lg ring-blue-300 hover:ring transition-colors'>
                     <Share2Icon className='size-4' /> Share
                   </button>
                 )}
 
                 {/* visibility */}
-                <button 
-                onClick={changeResumeVisibility} 
-                className='flex items-center p-2 px-4 gap-2 text-xs bg-linear-to-br from-purple-100 to-purple-200 text-purple-600 ring-purple-300 rounded-lg hover:ring transition-colors'>
+                <button
+                  onClick={changeResumeVisibility}
+                  className='flex items-center p-2 px-4 gap-2 text-xs bg-linear-to-br from-purple-100 to-purple-200 text-purple-600 ring-purple-300 rounded-lg hover:ring transition-colors'>
                   {resumeData.public ? <EyeIcon className="size-4" /> : <EyeOffIcon className="size-4" />}
                   {resumeData.public ? 'Public' : 'Private'}
                 </button>
 
                 {/*download  */}
-                <button 
-                onClick={downloadResume} 
-                className='flex items-center gap-2 px-6 py-2 text-xs bg-linear-to-br from-green-100 to-green-200 text-green-600 rounded-lg ring-green-300 hover:ring transition-colors'>
+                <button
+                  onClick={downloadResume}
+                  className='flex items-center gap-2 px-6 py-2 text-xs bg-linear-to-br from-green-100 to-green-200 text-green-600 rounded-lg ring-green-300 hover:ring transition-colors'>
                   <DownloadIcon className='size-4' /> Download
                 </button>
               </div>
             </div>
-              {/* resume preview */}
+            {/* resume preview */}
             <ResumePreview data={resumeData} template={resumeData.template} accentColor={resumeData.accent_color} />
           </div>
 
