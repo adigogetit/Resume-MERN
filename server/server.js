@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import connectDB from "./configs/db.js";
+import userRouter from "./routes/userRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,10 @@ app.use(cors())
 app.get('/', (req, res)=>{
     res.send("Server is live...")
 })
+// user routes
+app.use('/api/users', userRouter)
+
+
 
 // start express app
 app.listen(PORT, ()=>{
