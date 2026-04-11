@@ -83,6 +83,8 @@ export const loginUser = async (req, res) => {
 // GET: /api/users/data
 export const getUserById = async (req, res) => {
     try {
+        // Get userId from request (set by auth middleware)
+        // yeah hamko middleware se milega
         const userId = req.userId;
 
         // check if user exists
