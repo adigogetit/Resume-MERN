@@ -144,6 +144,7 @@ export const uploadResume = async (req, res) => {
 
         // storing response
         const extractedData = response.choices[0].message.content;
+        // parse data in json formate
         const parsedData = JSON.parse(extractedData)
 
         // create new resume
