@@ -11,11 +11,15 @@ import ExperienceForm from '../components/other/ExperienceForm'
 import EducationForm from '../components/other/EducationForm'
 import ProjectForm from '../components/other/ProjectForm'
 import SkillsForm from '../components/other/SkillsForm'
+import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
+import api from '../configs/api'
 
 
 const ResumeBuilder = () => {
 
   const { resumeId } = useParams()
+  const { token } = useSelector(state => state.auth)
 
   const [resumeData, setResumeData] = useState({
     _id: '',
@@ -33,13 +37,13 @@ const ResumeBuilder = () => {
 
   const loadExistingResume = async () => {
     try {
-      const resume = dummyResumeData.find(resume => resume._id === resumeId)
-      if (resume) {
-        setResumeData(resume)
-        document.title = resume.title;
+      const { data } = await api.get(`/api/resumes/get/${resumeId}`, { headers: { Authorization: token } })
+      if (data.resume) {
+        setResumeData(data.resume)
+        document.title = data.resume.title;
       }
     } catch (error) {
-      console.log(error.message)
+      toast.error(error?.response?.data?.message || error.message)
     }
   }
 
@@ -57,7 +61,14 @@ const ResumeBuilder = () => {
   const activeSection = sections[activeSectionIndex]
 
   const changeResumeVisibility = async () => {
-    setResumeData({ ...resumeData, public: !resumeData.public })
+    try {
+      const newVisibility = !resumeData.public
+      const { data } = await api.put('/api/resumes/update', { resumeId, resumeData: { ...resumeData, public: newVisibility } }, { headers: { Authorization: token } })
+      setResumeData(data.resume)
+      toast.success(data.message)
+    } catch (error) {
+      toast.error(error?.response?.data?.message || error.message)
+    }
   }
 
   const handleShare = () => {
@@ -75,9 +86,19 @@ const ResumeBuilder = () => {
     window.print();
   }
 
+  const saveResume = async () => {
+    try {
+      const { data } = await api.put('/api/resumes/update', { resumeId, resumeData }, { headers: { Authorization: token } })
+      setResumeData(data.resume)
+      toast.success(data.message)
+    } catch (error) {
+      toast.error(error?.response?.data?.message || error.message)
+    }
+  }
+
   useEffect(() => {
     loadExistingResume()
-  }, [])
+  }, [resumeId, token])
 
 
   return (
@@ -170,7 +191,7 @@ const ResumeBuilder = () => {
 
               </div>
 
-              <button onClick={() => { toast.promise(saveResume, { loading: 'Saving...' }) }} className='bg-linear-to-br from-violet-100 to-violet-200 hover:from-violet-200 hover:to-violet-400 text-violet-600  ring-violet-500 ring hover:ring-violet-900 transition-all rounded-md px-6 py-2 mt-6 text-sm'>
+              <button onClick={() => { toast.promise(saveResume(), { loading: 'Saving...' }) }} className='bg-linear-to-br from-violet-100 to-violet-200 hover:from-violet-200 hover:to-violet-400 text-violet-600  ring-violet-500 ring hover:ring-violet-900 transition-all rounded-md px-6 py-2 mt-6 text-sm'>
                 Save Changes
               </button>
 

@@ -23,7 +23,7 @@ app.get('/', (req, res)=>{
 // user routes
 app.use('/api/users', userRouter)
 // resume routes
-app.use('/api/resume', resumeRouter)
+app.use('/api/resumes', resumeRouter)
 // ai routes
 app.use('/api/ai', aiRouter)
 

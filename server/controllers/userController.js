@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import Resume from "../models/Resume.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -57,9 +58,9 @@ export const loginUser = async (req, res) => {
         const user = await User.findOne({ email })
         const isMatch = await bcrypt.compare(password, user.password)
 
-if (!isMatch) {
-    return res.status(400).json({ message: 'Invalid email or password' })
-}
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid email or password' })
+        }
 
         // check if password is correct
         if (!user.comparePassword(password)) {
@@ -115,10 +116,10 @@ export const getUserResumes = async (req, res) => {
         const userId = req.userId;
 
         // return user resumes
-        const resumes = await Resume.find({userId})
-        return res.status(200).json({resumes})
+        const resumes = await Resume.find({ userId })
+        return res.status(200).json({ resumes })
 
     } catch (error) {
-        return res.status(400).json({message: error.message})
+        return res.status(400).json({ message: error.message })
     }
 }
