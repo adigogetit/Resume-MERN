@@ -60,14 +60,19 @@ const ResumeBuilder = () => {
   ]
   const activeSection = sections[activeSectionIndex]
 
+
   const changeResumeVisibility = async () => {
     try {
-      const newVisibility = !resumeData.public
-      const { data } = await api.put('/api/resumes/update', { resumeId, resumeData: { ...resumeData, public: newVisibility } }, { headers: { Authorization: token } })
-      setResumeData(data.resume)
+      const formData = new FormData()
+      formData.append("resumeId", resumeId)
+      formData.append("resumeData", JSON.stringify({ public: !resumeData.public }))
+
+      const { data } = await api.put('/api/resumes/update', formData, { headers: { Authorization: token } })
+
+      setResumeData({ ...resumeData, public: !resumeData.public })
       toast.success(data.message)
     } catch (error) {
-      toast.error(error?.response?.data?.message || error.message)
+      console.error("Error saving resume:", error)
     }
   }
 
@@ -82,18 +87,34 @@ const ResumeBuilder = () => {
     }
   }
 
-  const downloadResume = () => {
-    window.print();
-  }
 
   const saveResume = async () => {
     try {
-      const { data } = await api.put('/api/resumes/update', { resumeId, resumeData }, { headers: { Authorization: token } })
+      let updatedResumeData = structuredClone(resumeData)
+
+      // remove image from updatedResumeData
+      if (typeof resumeData.personal_info.image === 'object') {
+        delete updatedResumeData.personal_info.image
+      }
+
+      const formData = new FormData();
+      formData.append("resumeId", resumeId)
+      formData.append('resumeData', JSON.stringify(updatedResumeData))
+      removeBackground && formData.append("removeBackground", "yes");
+      
+      typeof resumeData.personal_info.image === 'object' && formData.append("image", resumeData.personal_info.image)
+
+      const { data } = await api.put('/api/resumes/update', formData, { headers: { Authorization: token } })
+
       setResumeData(data.resume)
       toast.success(data.message)
     } catch (error) {
-      toast.error(error?.response?.data?.message || error.message)
+      console.error("Error saving resume:", error)
     }
+  }
+
+  const downloadResume = () => {
+    window.print();
   }
 
   useEffect(() => {
