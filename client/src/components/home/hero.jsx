@@ -20,7 +20,7 @@ const hero = () => {
                     </svg>
 
                     <nav className={`max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-screen ${isMenuOpen ? 'max-md:w-full bg-white/90 backdrop-blur-md z-50' : 'max-md:w-0'} transition-[width] flex-col md:flex-row flex gap-12 text-gray-800 text-m font-normal`}>
-                        <a className="hover:text-gray-600" href="#home">Home</a>
+                        <a className="hover:text-gray-600" href="#home">Home ji</a>
                         <a className="hover:text-gray-600" href="#features">Features</a>
                         <a className="hover:text-gray-600" href="#testimonials">Testimonials</a>
                         <a className="hover:text-gray-600" href="#contact">Contact</a>
