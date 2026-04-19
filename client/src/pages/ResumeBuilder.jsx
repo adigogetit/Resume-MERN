@@ -215,7 +215,6 @@ const ResumeBuilder = () => {
               <button onClick={() => { toast.promise(saveResume(), { loading: 'Saving...' }) }} className='bg-linear-to-br from-violet-100 to-violet-200 hover:from-violet-200 hover:to-violet-400 text-violet-600  ring-violet-500 ring hover:ring-violet-900 transition-all rounded-md px-6 py-2 mt-6 text-sm'>
                 Save Changes
               </button>
-
             </div>
           </div>
 
